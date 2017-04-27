@@ -1,0 +1,220 @@
+@import 'normalize';
+@include normalize();
+
+[v-cloak] {
+  display: none;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.f1,
+.f2,
+.f3,
+.f4,
+.f5,
+.f6 {
+  position: relative;
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.f3 {
+  a {
+    position: absolute;
+    bottom: 10vw;
+    left: 55vw;
+    width: 35vw;
+  }
+}
+
+.f4 {
+  .plate-box {
+    position: absolute;
+    top: 31vw;
+    left: 50%;
+    width: 82vw;
+    margin-left: -41vw;
+  }
+  .pin {
+    position: absolute;
+    top: 49vw;
+    left: 50%;
+    width: 35vw;
+    margin-left: -17vw;
+  }
+}
+
+.f5 {
+  .chance {
+    position: absolute;
+    top: 19px;
+    left: 0;
+    width: 100%;
+    color: #fffd0b;
+    text-align: center;
+  }
+  .table-header {
+    table-layout: fixed;
+    position: absolute;
+    top: 28vw;
+    left: 50%;
+    width: 70vw;
+    margin-left: -35vw;
+    font-size: 14px;
+    color: #fffd0b;
+  }
+  .winner-box {
+    overflow: hidden;
+    position: absolute;
+    top: 35vw;
+    left: 50%;
+    width: 70vw;
+    height: 42vw;
+    margin-left: -35vw;
+    text-align: center;
+    color: #ffffff;
+    .winner-list {
+      table-layout: fixed;
+      width: 100%;
+      font-size: 14px;
+      td {
+        height: 7.5vw;
+      }
+    }
+  }
+}
+
+.modal-result,
+.modal-login {
+  $color: #fb5251;
+  $width: 80vw;
+  $height: 25vw;
+  z-index: 99999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: $width;
+  height: $height;
+  line-height: $height;
+  margin: -$height/2 0 0 0 -$width/2;
+  border: 7px solid $color;
+  background: #fce6db;
+  text-align: center;
+  box-shadow: 0 0 0 2px #fce6db;
+  a.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: $color;
+  }
+}
+
+div.modal-login {
+  $color: #fb5251;
+  $height: 315px;
+  height: $height;
+  line-height: normal;
+  margin-top: -$height/2;
+  .mocal-login-content {
+    h2 {
+      color: $color;
+    }
+    form {
+      width: 250px;
+      margin: 0 auto;
+    }
+    input {
+      display: block;
+      width: 100%;
+      height: 35px;
+      margin: 15px 0;
+      padding: 0;
+      border: 1px solid #cdcdcd;
+      outline: 0;
+      border-radius: 5px;
+      text-indent: 1em;
+      transition: border-color .2s, box-shadow .2s;
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 10px rgba($color, .382);
+      }
+    }
+    .errmsg {
+      display: block;
+      padding: 5px 0;
+      font-size: 14px;
+      color: $color;
+    }
+    .btn-login,
+    .btn-reg {
+      display: block;
+      width: 100%;
+      height: 37px;
+      line-height: 35px;
+      margin-bottom: 15px;
+      border: 0;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: $color;
+      cursor: pointer;
+      &:hover {
+        background-color: darken($color, 4.5%);
+      }
+      &:active {
+        background-color: darken($color, 12.5%);
+        box-shadow: 0 0 5px rgba(0,0,0,.382) inset;
+      }
+      &.disabled {
+        background-color: #999999;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.mask {
+  z-index: 99998;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .618);
+}
+
+.init-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999;
+  background-color: rgba(0,0,0,.15);
+  .init-tip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 75px;
+    line-height: 75px;
+    margin-top: -37px;
+    margin-left: -100px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+  }
+}
