@@ -1,0 +1,244 @@
+@import 'normalize';
+@include normalize();
+
+body {
+  font-family: Arial, 'microsoft yahei', sans-serif;
+  background-color: #f5f4fa;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.f1,
+.f2 {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  img {
+    display: block;
+    width: 100%;
+  }
+  a {
+    position: absolute;
+    top: 55%;
+    left: 57%;
+  }
+}
+
+.f3 {
+  min-height: 525px;
+  background: url(../images/bg.png) no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  .panel {
+    width: 900px;
+    min-width: 1024px;
+    min-height: 100px;
+    margin: 0 auto;
+    h2 {
+      margin: 0;
+    }
+    .main {
+      position: relative;
+      height: 525px;
+      margin-top: 20px;
+      .plate-box {
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        .pin {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 220px;
+          height: 261px;
+          margin-top: -145px;
+          margin-left: -110px;
+        }
+      }
+      .winner-table {
+        position: absolute;
+        top: 35px;
+        right: 65px;
+        width: 361px;
+        height: 440px;
+        color: #fffd0b;
+        background: url(../images/winner-bg.png);
+        .chance {
+          line-height: 75px;
+        }
+      }
+      .table-header {
+        table-layout: fixed;
+        width: 300px;
+        margin: 100px auto 0;
+      }
+      .winner-box {
+        overflow: hidden;
+        height: 225px;
+        .winner-list {
+          table-layout: fixed;
+          width: 300px;
+          margin: 0 auto;
+          color: #ffffff;
+          td {
+            height: 42px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.f4 {
+  width: 900px;
+  min-width: 1024px;
+  min-height: 100px;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+.footer {
+  width: 100%;
+  min-width: 900px;
+  max-width: 1920px;
+  height: 319px;
+  margin: -170px auto 0;
+  background: url(../images/footer.png) no-repeat center center;
+  background-size: cover;
+}
+
+.modal-result,
+.modal-login {
+  $color: #fb5251;
+  $width: 500px;
+  $height: 100px;
+  z-index: 99999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: $width;
+  height: $height;
+  line-height: $height;
+  margin: -$height/2 0 0 0 -$width/2;
+  border: 7px solid $color;
+  background: #fce6db;
+  text-align: center;
+  box-shadow: 0 0 0 2px #fce6db;
+  a.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: $color;
+  }
+}
+
+div.modal-login {
+  $color: #fb5251;
+  $height: 315px;
+  height: $height;
+  line-height: normal;
+  margin-top: -$height/2;
+  .mocal-login-content {
+    h2 {
+      color: $color;
+    }
+    form {
+      width: 250px;
+      margin: 0 auto;
+    }
+    input {
+      display: block;
+      width: 100%;
+      height: 35px;
+      margin: 15px 0;
+      border: 1px solid #cdcdcd;
+      outline: 0;
+      border-radius: 5px;
+      text-indent: 1em;
+      transition: border-color .2s, box-shadow .2s;
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 10px rgba($color, .382);
+      }
+    }
+    .errmsg {
+      display: block;
+      padding: 5px 0;
+      font-size: 14px;
+      color: $color;
+    }
+    .btn-login,
+    .btn-reg {
+      display: block;
+      width: 100%;
+      height: 37px;
+      line-height: 35px;
+      margin-bottom: 15px;
+      border: 0;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: $color;
+      cursor: pointer;
+      &:hover {
+        background-color: darken($color, 4.5%);
+      }
+      &:active {
+        background-color: darken($color, 12.5%);
+        box-shadow: 0 0 5px rgba(0,0,0,.382) inset;
+      }
+      &.disabled {
+        background-color: #999999;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.mask {
+  z-index: 99998;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .618);
+}
+
+.init-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999;
+  background-color: rgba(0,0,0,.15);
+  .init-tip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 75px;
+    line-height: 75px;
+    margin-top: -37px;
+    margin-left: -100px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+  }
+}
